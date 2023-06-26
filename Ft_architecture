@@ -567,14 +567,6 @@ scale_colour_gradientn(colours = rainbow(5), name = "Seed number", limits = c(-4
 
 # do the same for fitness (limits (-220 , 1500))
 
-# QTLs vs genome
-qtls <- c(mut_final[mut_final$qtl == "1", "age_begin"]) 
-ks.test(mut_final[mut_final$pruned == "1", "age_begin"], sa_sign_snp[, "meanage"])
-ks.test(mut_final[mut_final$pruned == "1", "age_begin"], fogo_sign_snp[, "meanage"], na.rm = T)
-mean(mut_final[mut_final$pruned == "1", "age_begin"])
-mean(sa_sign_snp[, "meanage"], na.rm = T)
-mean(fogo_sign_snp[, "meanage"], na.rm = T)
-
 # age x beta
 cor.test(abs(sa_sign_snp$new_beta), sa_sign_snp$meanage)
 cor.test(abs(sa_sign_snp$new_af), sa_sign_snp$meanage)
